@@ -319,3 +319,36 @@ console.log(car.year);
 #!markdown
 
 Jedi: 这种写法更为自然！比使用原型方法要舒服很多（初学者才这么干！😂😂）。
+
+The example above creates a class named "Car".
+
+The class has two initial properties: "name" and "year".
+
+A JavaScript class is not an object.
+
+It is a template for JavaScript objects.
+
+#!markdown
+
+### Using a Class
+
+When you have a class, you can use the class to create objects:
+
+#!javascript
+
+class Car {
+    constructor(name, year) {
+        this.name = name;
+        this.year = year;
+    }
+}
+const myCar1 = new Car("Ford", 2014);
+const myCar2 = new Car("Audi", 2019);
+console.log(`${myCar1.name}, ${myCar1.year}`);
+console.log(`${myCar2.name}, ${myCar2.year}`);
+
+#!markdown
+
+Learn more about classes in the the chapter: [JavaScript Classes](https://www.w3schools.com/js/js_classes.asp).
+
+[MDN Reference](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Classes)
