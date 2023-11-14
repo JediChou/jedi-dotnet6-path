@@ -385,7 +385,6 @@ myPromise.then(
 #!html
 
 <html>
-    <head><title>Example using a Promise</title></head>
     <body>
         <div id="demo"></div>
         <script>
@@ -401,8 +400,49 @@ myPromise.then(
     </body>
 </html>
 
+#!javascript
+
+// 使用回调实现一个异步操作，例如一个简单的输出。
+// File: CallbackDemo.js
+// Execute: node CallbackDemo.js
+setTimeout(() => {
+    console.log("Output a message from call back function.");
+}, 2000);
+console.log("🤣 So, if you look at me.");
+
+////////////////////////////////////////////
+// Output
+// 🤣 So, if you look at me.
+// Output a message from call back function.
+
+#!javascript
+
+// 回调地狱版
+// File: callback_hell.js
+// Execute: node callback_hell.js
+setTimeout(()=>{
+    console.log("Task 2");
+    setTimeout(()=>{
+        console.log("Task 3");
+        setTimeout(()=>{
+            console.log("Task 4");
+        }, 3000);
+    }, 2000);
+}, 1000);
+console.log("Task 1");
+
+////////////////////////////////////////////
+// Output
+// PS D:\> node .\callback_hell.js
+// Task 1
+// Task 2
+// Task 3
+// Task 4
+
 #!markdown
 
 Learn more about Promises in the the chapter: [JavaScript Promises](https://www.w3schools.com/js/js_promise.asp).
 
 [MDN Reference - Promise](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+
+Jedi: Promise是个非常复杂的对象，需要专题学习。
