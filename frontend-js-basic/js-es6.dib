@@ -1,0 +1,321 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+# JavaScript ES6
+
+[Reference Link](https://www.w3schools.com/js/js_es6.asp)
+
+CMAScript 2015 was the second major revision to JavaScript.
+
+ECMAScript 2015 is also known as ES6 and ECMAScript 6.
+
+This chapter describes the most important features of ES6.
+
+**`New features in ES6`**
+
+* The let keyword
+* The const keyword
+* Arrow Functions
+* The ... Operator
+* For/of
+* Map Objects
+* Set Objects
+* Classes
+* Promises
+* Symbol
+* Default Parameters
+* Function Rest Parameter
+* String.includes()
+* String.startsWith()
+* String.endsWith()
+* Array.from()
+* Array keys()
+* Array find()
+* Array findIndex()
+* New Math Methods
+* New Number Properties
+* New Number Methods
+* New Global Methods
+* Object entries
+* JavaScript Modules
+
+#!markdown
+
+## JavaScript let
+
+The `let` keyword allows you to declare a variable with block scope.
+
+#!javascript
+
+console.log(`1. Before define x variable ->  ${x}`);
+var x = 20;
+console.log(`2. After define x -> ${x}`);
+
+{
+    // console.log(`3. Enter into a block, and before define x variable -> ${x}`);
+    let x = 10;
+    console.log(`4. After define x variable -> ${x} at block.`);
+}
+
+console.log(`5. Check x variable out of block -> ${x}`);
+
+#!markdown
+
+Read more about let in the chapter: [JavaScript Let](https://www.w3schools.com/js/js_let.asp).
+
+Jedi: 注意直接打开步骤3的注释会产生编译错误！间接说明了var定义是全局的。其对应的错误信息是 `Error: Cannot access 'x' before initialization`。
+
+#!markdown
+
+## 
+
+#!markdown
+
+## JavaScript const
+
+The const keyword allows you to declare a constant (a JavaScript variable with a constant value).
+
+Constants are similar to let variables, except that the value cannot be changed.
+
+#!javascript
+
+var x = 20;
+console.log(`1. After define a global variable -> x=${x}`);
+{
+    const x = 10;
+    console.log(`2. After define a block variable -> x=${x}`);
+}
+console.log(`3. Check x variable out of block -> x=${x}`);
+
+#!markdown
+
+Read more about `const` in the chapter: [JavaScript Const](https://www.w3schools.com/js/js_const.asp).
+
+Jedi: 让我最不能理解的是const这玩意可以接受非基本类型的定义。
+
+#!markdown
+
+## Arrow Functions
+
+Arrow functions allows a short syntax for writing function expressions.
+
+You don't need the function keyword, the return keyword, and the curly brackets.
+
+#!javascript
+
+// ES5
+var x1 = function(x, y) {
+   return x * y;
+}
+
+// ES6
+const x2 = (x, y) => x * y;
+
+console.log(x1(2,2));
+console.log(x2(2,2));
+console.log(x1);
+console.log(typeof x1);
+console.log(x2);
+console.log(typeof x2);
+
+#!markdown
+
+Arrow functions do not have their own `this`. They are not well suited for defining `object` methods.
+
+Arrow functions are not hoisted. They must be defined before they are used.
+
+Using `const` is safer than using `var`, because a function expression is always a constant value.
+
+You can only omit the `return` keyword and the curly brackets if the function is a single statement. Because of this, it might be a good habit to always keep them:
+
+#!javascript
+
+const x = (x, y) => { return x * y };
+console.log(2, 3);
+console.log(x);
+console.log(typeof x);
+
+#!markdown
+
+### The Spread (...) Operator
+
+The `...` operator expands an iterable (like an array) into more elements:
+
+#!javascript
+
+const q1 = ["Jan", "Feb", "Mar"];
+const q2 = ["Apr", "May", "Jun"];
+const q3 = ["Jul", "Aug", "Sep"];
+const q4 = ["Oct", "Nov", "May"];
+
+const year = [...q1, ...q2, ...q3, ...q4];
+console.log(year);
+console.log(typeof year);
+
+#!markdown
+
+Jedi: you can check this [link](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Spread_syntax).
+
+The `...` operator can be used to expand an iterable into more arguments for function calls:
+
+#!javascript
+
+const numbers = [23,55,21,87,56];
+let maxValue = Math.max(...numbers);
+console.log(maxValue);
+
+// Jedi remark.
+const iterator = [...numbers];
+console.log(typeof iterator);
+console.log(iterator instanceof Array);
+
+#!markdown
+
+Jedi: You can write a function to accept spread parameter. That means use spread operator to pass an array as a parameter at function prototype.
+
+#!javascript
+
+function sum(...args) {
+    let total = 0;    
+    for (let arg of args) total += arg;
+    return total;
+}
+
+console.log(sum(1, 2, 3));
+console.log(sum(1, 2, 3, 4, 5, 6));
+
+#!markdown
+
+## The For/Of Loop
+
+The JavaScript `for/of` statement loops through the values of an iterable objects.
+
+`for/of` lets you loop over data structures that are iterable such as Arrays, Strings, Maps, NodeLists, and more.
+
+The `for/of` loop has the following syntax:
+
+#!javascript
+
+const names = ['Jedi','Lin','Jian']
+for (name of names) {
+    console.log(name);
+}
+
+#!markdown
+
+*variable* - For every iteration the value of the next property is assigned to the variable. Variable can be declared with const, let, or var.
+
+*iterable* - An object that has iterable properties.
+
+#!markdown
+
+### Looping over an Array
+
+#!javascript
+
+const cars = ["BMW", "Volvo", "Mini"];
+let text = "";
+for (let x of cars) {
+    text += x + " ";
+}
+console.log(text);
+
+#!markdown
+
+### Looping over a String
+
+#!javascript
+
+let language = "JavaScript";
+let text = "";
+for (let x of language) {
+    text += x + " ";
+}
+console.log(text);
+
+#!markdown
+
+Learn more in the chapter: JavaScript Loop [For/In/Of](https://www.w3schools.com/js/js_loop_forin.asp).
+
+#!markdown
+
+## JavaScript Maps
+
+Being able to use an Object as a key is an important Map feature.
+
+#!javascript
+
+const fruits = new Map([
+    ["apples", 500],
+    ["bananas", 300],
+    ["oranges", 200]
+]);
+
+#!markdown
+
+Learn more about Map objects, and the difference between a Map and an Array, in the the chapter: [JavaScript Maps](https://www.w3schools.com/js/js_object_maps.asp).
+
+[MDN Reference](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map)
+
+#!markdown
+
+## JavaScript Sets
+
+#!javascript
+
+// Create a Set
+const letters = new Set();
+
+// Add some values to the Set
+// letters.add("c");
+letters.add("a")
+letters.add("b")
+letters.add("c")
+// letters.add("c")
+
+let text = "";
+for (let letter of letters)
+    text += letter;
+console.log(text);
+
+#!markdown
+
+Learn more about Set objects in the the chapter: [JavaScript Sets](https://www.w3schools.com/js/js_object_sets.asp).
+
+[MDN Reference](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Set)
+
+#!markdown
+
+## JavaScript Classes
+
+JavaScript Classes are templates for JavaScript Objects.
+
+Use the keyword `class` to create a class.
+
+Always add a method named `constructor()`:
+
+
+```js
+class ClassName {
+  constructor() { ... }
+}
+```
+
+#!javascript
+
+class Car {
+    constructor(name, year) {
+        this.name = name;
+        this.year = year;
+    }
+}
+let car = new Car("Ford Escort", 1990);
+console.log(car.name);
+console.log(car.year);
+
+#!markdown
+
+Jedi: 这种写法更为自然！比使用原型方法要舒服很多（初学者才这么干！😂😂）。
