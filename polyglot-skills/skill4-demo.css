@@ -1,0 +1,15 @@
+.outer {
+    background-color: purple; 
+    padding: 50px;
+}
+
+.inner {
+    width:400px; 
+    height:100px; 
+    line-height: 96px; 
+    margin: 0 auto; 
+    border: 2px solid darkorange; 
+    background-color: cadetblue; 
+    text-align: center; 
+    font-size: 25px;
+}

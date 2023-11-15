@@ -1,0 +1,163 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+# 在 Polyglot 中使用 HTML
+
+#!markdown
+
+## 1.编写一个极简页面
+
+#!html
+
+<html><body>
+    <h1>Jedi chou</h1>
+    <p>Something will happen!</p>
+    <button>Commit</button>
+</body></html>
+
+#!markdown
+
+## 2.使用简单的HTML片段
+
+#!html
+
+<div style="color:red">
+    Wah. This feature very awsome, we like it.
+</div>
+
+#!markdown
+
+## 3.内部样式
+
+#!html
+
+#!html
+<!-- 使用内部样式 -->
+<style>
+    .outer {
+        background-color: purple; 
+        padding: 50px;
+    }
+    .inner {
+        width:400px; 
+        height:100px; 
+        line-height: 96px; 
+        margin: 0 auto; 
+        border: 2px solid darkorange; 
+        background-color: cadetblue; 
+        text-align: center; 
+        font-size: 25px;
+    }
+</style>
+<div class="outer">
+    <div class="inner">
+    使用 <strong>内部</strong> 样式
+    </div>
+</div>
+
+#!markdown
+
+## 4.外部样式表文件
+
+#!html
+
+#!html
+<link rel=stylesheet href="./skill4-demo.css">
+<div class="outer">
+    <div class="inner">
+    使用 <strong>内部</strong> 样式
+    </div>
+</div>
+
+#!markdown
+
+## 5.嵌入式 javascript
+
+#!html
+
+#!html
+<!-- 嵌入式 javascript -->
+<div 
+    style="background-color: purple; margin: 10px auto; padding: 50px; font-size: 50px; text-align: center;" 
+    onclick='event.currentTarget.style.backgroundColor="chocolate";'>
+    点我改变背景变色
+</div>
+
+#!markdown
+
+## 6.使用行内 javascript
+
+#!html
+
+#!html
+<!-- 行内 javascript -->
+<div id="js-test"
+    style="background-color: purple; margin: 10px auto; padding: 50px; font-size: 50px; text-align: center;" 
+    onclick='event.currentTarget.style.backgroundColor="chocolate";'>
+    点我切换背景颜色
+</div>
+<script>
+    var flag =false;
+    document.getElementById("js-test").onclick = function()
+    {
+        if(flag)
+        {
+            event.currentTarget.style.backgroundColor = "goldenrod";
+        }
+        else
+        {
+            event.currentTarget.style.backgroundColor = "green";
+        }
+        flag = !flag;
+    };
+</script>
+
+#!markdown
+
+## 7.外部 javascript 文件
+
+#!html
+
+#!html
+<!-- 行内 javascript -->
+<div id="js-file-test"
+    style="background-color: purple; margin: 10px auto; padding: 50px; font-size: 50px; text-align: center;" 
+    onclick='event.currentTarget.style.backgroundColor="chocolate";'>
+    点我切换背景颜色
+</div>
+<script src="./skill7-demo.js"></script>
+
+#!markdown
+
+## 8.外部html文件
+
+#!html
+
+#!html
+#!import ./index.html
+
+#!markdown
+
+## 9.结合 asp.net 的 Razor方式 **😍😍😍**
+
+#!csharp
+
+// 添加包源(省略即使用默认nuget包源)
+// #i "nuget:https://api.nuget.org/v3/index.json"
+
+// 引用Razor包
+#r "nuget:RazorInteractive, 1.1.10"
+
+#!csharp
+
+var time = DateTime.Now;
+string uname = "Jedi Chou";
+
+#!csharp
+
+#!razor
+
+<p>Hi, @Model.uname, current time is @Model.time</p>
