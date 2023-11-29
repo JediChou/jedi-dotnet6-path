@@ -575,6 +575,6 @@ The `keys()` method returns an Array Iterator object with the keys of an array.
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
 const keys = fruits.keys();
 console.log(typeof keys);
-console.log(keys instanceof Iterator);
+console.log(typeof keys[Symbol.iterator]);
 for (let key of keys)
     console.log(`${key}, ${fruits[key]}`);
