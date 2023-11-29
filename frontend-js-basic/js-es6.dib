@@ -677,3 +677,13 @@ console.log(Math.cbrt(008));  // returns 2
 console.log(Math.cbrt(064));  // returns 4
 console.log(Math.cbrt(64));  // returns 4
 console.log(Math.cbrt(125));  // returns 5
+
+#!markdown
+
+### The Math.log2() Method
+
+`Math.log2(x)` returns the base 2 logarithm of x:
+
+#!javascript
+
+console.log(Math.log2(2));  // return 1
