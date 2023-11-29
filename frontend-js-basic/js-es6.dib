@@ -578,3 +578,28 @@ console.log(typeof keys);
 console.log(typeof keys[Symbol.iterator]);
 for (let key of keys)
     console.log(`${key}, ${fruits[key]}`);
+
+#!markdown
+
+## Array find()
+
+The `find()` method returns the value of the first array element that passes a test function.
+
+This example finds (returns the value of) the first element that is larger than 18:
+
+**Jedi** 如果要用lambda表達式，則要先建立！
+
+#!javascript
+
+const numbers = [4, 9, 16, 25, 29];
+const myFunction = (val, idx, arr) => val > 18 && idx > 3;
+let first = numbers.find(myFunction);
+console.log(first);
+
+#!markdown
+
+Note that the function takes 3 arguments:
+
+* The item value
+* The item index
+* The array itself
