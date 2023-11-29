@@ -551,3 +551,30 @@ The `endsWith()` method returns `true` if a string ends with a specified value, 
 var text = "John Doe";
 console.log(text.endsWith("Doe"));  // returns true
 console.log(text.endsWith("Sam"));  // returns false
+
+#!markdown
+
+## Array.from()
+
+The `Array.from()` method returns an Array object from any object with a length property or any iterable object.
+
+#!javascript
+
+let text = "ABCDEFG";
+console.log(Array.from(text));
+
+#!markdown
+
+## Array keys()
+
+The `keys()` method returns an Array Iterator object with the keys of an array.
+
+#!javascript
+
+// Create an Array Iterator object, containing the keys of the array:
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+const keys = fruits.keys();
+console.log(typeof keys);
+console.log(keys instanceof Iterator);
+for (let key of keys)
+    console.log(`${key}, ${fruits[key]}`);
