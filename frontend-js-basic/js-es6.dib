@@ -687,3 +687,30 @@ console.log(Math.cbrt(125));  // returns 5
 #!javascript
 
 console.log(Math.log2(2));  // return 1
+
+#!markdown
+
+### The Math.log10() Method
+
+`Math.log10(x)` returns the base 10 logarithm of x:
+
+#!javascript
+
+console.log(Math.log10(10)); // return 1
+console.log(Math.log10(100)); // return 2
+
+#!markdown
+
+## New Number Properties
+
+ES6 added the following properties to the Number object:
+
+* EPSILON
+* MIN_SAFE_INTEGER
+* MAX_SAFE_INTEGER
+
+#!javascript
+
+console.log(Number.EPSILON);
+console.log(Number.MIN_SAFE_INTEGER);
+console.log(Number.MAX_SAFE_INTEGER);
