@@ -815,3 +815,27 @@ The `entries()` method returns an Array Iterator object with key/value pairs:
 ```
 
 The `entries()` method does not change the original array.
+
+#!markdown
+
+## Modules
+
+Modules are imported in two differen ways:
+
+#!markdown
+
+### Import from named exports
+
+Import named exports from the file person.js:
+
+```js
+import { name, age } from './person.js';
+```
+
+### Import from default exports
+
+Import a default export from the file message.js:
+
+```js
+import message from './message.js';
+```
