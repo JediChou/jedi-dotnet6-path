@@ -70,10 +70,6 @@ Jedi: 注意直接打开步骤3的注释会产生编译错误！间接说明了v
 
 #!markdown
 
-## 
-
-#!markdown
-
 ## JavaScript const
 
 The const keyword allows you to declare a constant (a JavaScript variable with a constant value).
@@ -543,3 +539,15 @@ The `startsWith()` method returns `true` if a string begins with a specified val
 let text = "Hello world, welcome to the universe.";
 console.log(text.startsWith("Hello"));  // returns true
 console.log(text.startsWith("World"));  // returns false
+
+#!markdown
+
+## String.endsWith()
+
+The `endsWith()` method returns `true` if a string ends with a specified value, otherwise `false`:
+
+#!javascript
+
+var text = "John Doe";
+console.log(text.endsWith("Doe"));  // returns true
+console.log(text.endsWith("Sam"));  // returns false
