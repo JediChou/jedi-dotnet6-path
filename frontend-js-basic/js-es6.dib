@@ -531,3 +531,15 @@ The `includes()` method returns `true` if a string contains a specified value, o
 let text = "Hello world, welcome to the universe.";
 console.log(text.includes("world"));    // Returns true
 console.log(text.includes("jedi"));  // return false
+
+#!markdown
+
+## String.startsWith()
+
+The `startsWith()` method returns `true` if a string begins with a specified value, otherwise `false`:
+
+#!javascript
+
+let text = "Hello world, welcome to the universe.";
+console.log(text.startsWith("Hello"));  // returns true
+console.log(text.startsWith("World"));  // returns false
