@@ -446,3 +446,76 @@ Learn more about Promises in the the chapter: [JavaScript Promises](https://www.
 [MDN Reference - Promise](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
 Jedi: Promise是个非常复杂的对象，需要专题学习。
+
+#!markdown
+
+## The Symbol Type
+
+A JavaScript Symbol is a primitive datatype just like Number, String, or Boolean.
+
+It represents a unique "hidden" identifier that no other code can accidentally access.
+
+For instance, if different coders want to add a person.id property to a person object belonging to a third-party code, they could mix each others values.
+
+Using `Symbol()` to create a unique identifiers, solves this problem:
+
+#!javascript
+
+const person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 50,
+    eyeColor: "blue"
+};
+
+let id = Symbol('id');
+person[id] = 140353;
+console.log(person[id]); // Now person[id] = 140353
+console.log(person.id);  // but person.id is still undefined
+
+#!markdown
+
+### Note
+
+Symbols are always unique.
+
+If you create two symbols with the same description they will have different values:
+
+#!javascript
+
+console.log(Symbol("id") == Symbol("id")); // false
+
+#!markdown
+
+## Default Parameter Values
+
+ES6 allows function parameters to have default values.
+
+#!javascript
+
+function myFunction(x, y = 10) {
+    // y is 10 if not passed or undefined
+    return x + y;
+}
+let myFunc = (x, y=10) => x + y;
+
+let tmp = myFunction(5); // will return 15
+let tmp2 = myFunc(5);
+console.log(tmp, tmp2);
+
+#!markdown
+
+## Function Rest Parameter
+
+The rest parameter (...) allows a function to treat an indefinite number of arguments as an array:
+
+#!javascript
+
+function sum(...args) {
+    let sum = 0;
+    for (let arg of args) sum += arg;
+    return sum;
+}
+
+let x = sum(4, 9, 16, 25, 29, 100, 66, 77);
+console.log(x);
