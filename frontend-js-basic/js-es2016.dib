@@ -1,0 +1,23 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+# ECMAScript 2016
+
+[Reference Link](https://www.w3schools.com/js/js_2016.asp)
+
+## JavaScript Version Numbers
+
+Old JS versions are named by numbers: ES5 (2009) and ES6 (2015).
+
+From 2016, versions are named by year: ECMAScript 2016, 2017, 2018, 2019, ...
+
+## New Features in ECMAScript 2016
+
+This chapter introduces the new features in ECMAScript 2016:
+
+* JavaScript Exponentiation (`**`)
+* JavaScript Exponentiation assignment (`**=`)
+* JavaScript Array `includes()`
