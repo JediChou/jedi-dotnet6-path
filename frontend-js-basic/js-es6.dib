@@ -793,3 +793,25 @@ console.log(isNaN(null));  // returns false
 ## Object entries()
 
 Create an Array Iterator, and then iterate over the key/value pairs:
+
+#!javascript
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+const f = fruits.entries();
+for (let x of f) console.log(x);
+// for (const [key, val] of f) {
+//     console.log(`${key} -> ${val}`);
+// }
+
+#!markdown
+
+The `entries()` method returns an Array Iterator object with key/value pairs:
+
+```output
+[0, "Banana"]
+[1, "Orange"]
+[2, "Apple"]
+[3, "Mango"]
+```
+
+The `entries()` method does not change the original array.
