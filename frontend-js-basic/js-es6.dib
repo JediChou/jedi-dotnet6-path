@@ -603,3 +603,26 @@ Note that the function takes 3 arguments:
 * The item value
 * The item index
 * The array itself
+
+#!markdown
+
+## Array findIndex()
+
+The `findIndex()` method returns the index of the first array element that passes a test function.
+
+This example finds the index of the first element that is larger than 18:
+
+#!javascript
+
+const numbers = [4, 9, 16, 25, 29];
+const myFunction = (val, idx, arr) => val > 18;
+let first = numbers.findIndex(myFunction);
+console.log(first);
+
+#!markdown
+
+Note that the function takes 3 arguments:
+
+* The item value
+* The item index
+* The array itself
