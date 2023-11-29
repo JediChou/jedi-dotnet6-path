@@ -626,3 +626,29 @@ Note that the function takes 3 arguments:
 * The item value
 * The item index
 * The array itself
+
+#!markdown
+
+## New Math Methods
+
+ES6 added the following methods to the Math object:
+
+* `Math.trunc()`
+* `Math.sign()`
+* `Math.cbrt()`
+* `Math.log2()`
+* `Math.log10()`
+
+#!markdown
+
+### The Math.trunc() Method
+
+`Math.trunc(x)` returns the integer part of x:
+
+#!javascript
+
+console.log(Math.trunc(4.9))    // returns 4
+console.log(Math.trunc(4.7))    // returns 4
+console.log(Math.trunc(4.4))    // returns 4
+console.log(Math.trunc(4.2))    // returns 4
+console.log(Math.trunc(-4.2))   // returns -4
