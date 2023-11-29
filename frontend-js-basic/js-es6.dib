@@ -714,3 +714,24 @@ ES6 added the following properties to the Number object:
 console.log(Number.EPSILON);
 console.log(Number.MIN_SAFE_INTEGER);
 console.log(Number.MAX_SAFE_INTEGER);
+
+#!markdown
+
+## New Number Methods
+
+ES6 added 2 new methods to the Number object:
+
+* Number.isInteger()
+* Number.isSafeInteger()
+
+#!markdown
+
+### The Number.isInteger() Method
+
+The `Number.isInteger()` method returns `true` if the argument is an integer.
+
+#!javascript
+
+console.log(Number.isInteger(10));  // returns true
+console.log(Number.isInteger(10.5));  // returns false
+console.log(Number.isInteger("10"));  // returns false
