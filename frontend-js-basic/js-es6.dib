@@ -664,3 +664,16 @@ console.log(Math.trunc(-4.2))   // returns -4
 console.log(Math.sign(-4));  // returns -1
 console.log(Math.sign(0));  // returns 0
 console.log(Math.sign(4));  // returns 1
+
+#!markdown
+
+### The Math.cbrt() Method
+
+`Math.cbrt(x)` returns the cube root of x:
+
+#!javascript
+
+console.log(Math.cbrt(008));  // returns 2
+console.log(Math.cbrt(064));  // returns 4
+console.log(Math.cbrt(64));  // returns 4
+console.log(Math.cbrt(125));  // returns 5
